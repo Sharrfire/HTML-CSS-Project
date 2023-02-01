@@ -20,6 +20,15 @@ body {
 a {
     text-decoration: none;
 }
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.line-clamp.line-2 {
+    --line-clamp: 2;
+}
 
 .btn {
     display: inline-block;
@@ -35,6 +44,7 @@ a {
 }
 
 .btn:hover {
+    cursor: pointer;
     opacity: 0.9;
 }
 
@@ -59,6 +69,9 @@ a {
 .heading.lv2 {
     font-size: 3.8rem;
     line-height: 1.26;
+}
+.word-break-all{
+word-break: break-all;
 }
 /* Header */
 .header {
@@ -295,8 +308,74 @@ a {
     border-radius: 50%;
 }
 .popular-top .control-btn:hover {
-    background-color:var(--primary-color);
+    background-color: var(--primary-color);
     color: #fff;
     cursor: pointer;
+}
+/* Course List */
+.popular .course-list {
+    display: flex;
+    margin-top: 55px;
+    gap: 30px;
+}
+.popular .course-item {
+    flex: 1;
+    border: 1px solid #e2dfda;
+    border-radius: 12px;
+    background: #ffffff;
+}
+.popular .course-item:hover {
+    border-color: transparent;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.05);
+}
+.popular .course-item .thumb {
+    width: calc(100% + 2px);
+    height: 278px;
+    margin: -1px;
+    border-radius: 12px 12px 0 0;
+    object-fit: cover;
+}
 
+.popular .course-item .info {
+    padding: 16px 22px 22px;
+}
+
+.popular .head,
+.popular .rating,
+.popular .course-item .foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.popular .course-item .title a,
+.popular .course-item .price {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.67;
+    color: #171100;
+}
+.popular .course-item .title a {
+    padding-right: 8px;
+}
+.popular .rating .value {
+    margin-left: 6px;
+    font-size: 1.6rem;
+    line-height: 1.75;
+    color: #fea31b;
+}
+.popular .course-item .desc {
+    margin-top: 6px;
+    font-size: 1.4rem;
+    line-height: 1.86;
+    color: #5f5b53;
+}
+.popular .course-item .foot {
+    margin-top: 12px;
+}
+.popular .course-item .book-btn {
+    border: none;
+}
+.popular .course-item .book-btn:hover {
+    color: #ffffff;
+    background: var(--primary-color);
 }
